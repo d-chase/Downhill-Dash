@@ -1,0 +1,87 @@
+settings = 
+{
+
+	orientation = 
+	{
+		default = "portrait",
+	},
+	
+	iphone =
+	{
+		plist =
+		{
+			CFBundleDisplayName = "Downhill Dash",
+			CFBundleName = "Downhill Dash",
+			CFBundleIconFiles = {
+				 "Icon.png",
+				"Icon@2x.png",
+				"Icon-60.png",
+				"Icon-60@2x.png",
+				"Icon-60@3x.png",
+				"Icon-72.png",
+				"Icon-72@2x.png",
+				"Icon-76.png",
+				"Icon-76@2x.png",
+				"Icon-167.png",
+				"Icon-Small-40.png",
+				"Icon-Small-40@2x.png",
+				"Icon-Small-40@3x.png",
+				"Icon-Small-50.png",
+				"Icon-Small-50@2x.png",
+				"Icon-Small.png",
+				"Icon-Small@2x.png",
+				"Icon-Small@3x.png"
+			},  -- Required
+			
+			UILaunchImages = {},     -- Required
+			UIApplicationExitsOnSuspend = false,
+			UIPrerenderedIcon = true,
+			UIStatusBarHidden = true,
+			MinimumOSVersion = "7.0",
+			UIBackgroundModes = {"remote-notification"}, -- Needed for OneSignal
+		},
+	},
+	
+	plugins =
+	{
+		["plugin.OneSignal"] =
+		{
+			publisherId = "com.onesignal",
+		},
+		["plugin.google.play.services"] =
+		{
+			publisherId = "com.coronalabs",
+			supportedPlatforms = { android=true, ["android-kindle"]=true },
+		},
+
+
+		["CoronaProvider.analytics.flurry"] =
+		{
+			publisherId = "com.coronalabs"
+		},
+		["CoronaProvider.gameNetwork.google"] =
+		{
+			publisherId = "com.coronalabs",
+			supportedPlatforms = { android=true }
+		},
+
+
+		["CoronaProvider.native.popup.social"] =
+		{
+			publisherId = "com.coronalabs"
+		},
+
+
+		["CoronaProvider.gameNetwork.apple"] =
+        {
+            publisherId = "com.coronalabs",
+            supportedPlatforms = { iphone=true, ["iphone-sim"]=true },
+        },
+        
+        
+        ["plugin.google.play.services"] =
+        {
+            publisherId = "com.coronalabs"
+        },
+	},
+}
